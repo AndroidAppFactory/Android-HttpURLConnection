@@ -10,7 +10,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 
 /**
- * Created by hardyshi on 16/11/22.
+ * HTTPS 请求类
  */
 public class HTTPSConnection extends BaseConnection {
 

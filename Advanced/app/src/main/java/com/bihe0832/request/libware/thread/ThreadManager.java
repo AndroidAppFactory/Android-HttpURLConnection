@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by hardyshi on 16/6/2.
+ * 基于HandlerThread的多线程处理分发类
  */
 public class ThreadManager {
 

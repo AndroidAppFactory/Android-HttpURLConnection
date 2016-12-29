@@ -4,7 +4,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by hardyshi on 16/11/22.
+ *
+ * HTTP 请求类
+ *
  */
 public class HTTPConnection extends BaseConnection {
 

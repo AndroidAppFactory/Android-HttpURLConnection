@@ -11,6 +11,9 @@ import com.bihe0832.request.libware.thread.ThreadManager;
 
 import java.net.HttpURLConnection;
 
+/**
+ * 网络请求分发、执行类
+ */
 public class HTTPServer {
 
     private  static final String LOG_TAG = "bihe0832 REQUEST";

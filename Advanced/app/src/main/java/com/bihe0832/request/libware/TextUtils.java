@@ -6,14 +6,11 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 基本的工具类 处理字符串判空、编码格式转换等
+ */
 public class TextUtils {
-    /**
-     * 判断字符串是否为空
-     *
-     * @param s
-     *            需要判断的字符串
-     * @return boolean 为空返回true
-     */
+
     public static boolean ckIsEmpty(String s) {
         if (s == null || s.trim().equals("") || s.trim().equals("null")) {
             return true;

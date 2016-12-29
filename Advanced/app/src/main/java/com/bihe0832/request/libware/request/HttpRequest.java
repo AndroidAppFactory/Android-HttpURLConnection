@@ -10,6 +10,11 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
+/**
+ *
+ * 网络请求实例类的基类，所有具体的网络请求都是他的实现，他与{@link HttpResponse}一般成对使用
+ *
+ */
 
 public abstract class HttpRequest {
 
@@ -56,19 +61,12 @@ public abstract class HttpRequest {
 				if(TextUtils.ckIsEmpty(response)){
 					Log.e(LOG_TAG,"responseBody is null");
 				}else{
-					int flag = HTTPServer.Error;
 					try {
 						JSONObject json = new JSONObject(response);
 						int ret = json.getInt(HttpResponse.HTTP_RESP_PARAM_RET);
-						if (ret == 0) {
-							flag = HTTPServer.Succ;
-						} else {
-							flag = ret;
-						}
 						onRequestSuccess(ret, json);
 					} catch (JSONException e) {
-						flag = HTTPServer.HttpRespParseError;
-						onRequestFailure(flag, response);
+						onRequestFailure(HTTPServer.HttpRespParseError, response);
 					}
 				}
 			}catch (Exception e){
@@ -79,18 +77,13 @@ public abstract class HttpRequest {
 
 		@Override
 		public void onFailure(int statusCode, String responseBody) {
-			if (null == responseBody) {
-				Log.e(LOG_TAG,"responseBody is null");
-				onRequestFailure(statusCode, null);
-			}else{
-				onRequestFailure(statusCode, responseBody);
-			}
 			int code = HTTPServer.NetWorkException;
 			if (statusCode == 0) {
 				code = HTTPServer.NetWorkException;
 			} else if (statusCode > 300) {
 				code = HTTPServer.HttpSatutsError;
 			}
+			onRequestFailure(code, responseBody);
 		}
 	};
 }

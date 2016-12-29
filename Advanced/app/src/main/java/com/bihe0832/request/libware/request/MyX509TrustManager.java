@@ -9,9 +9,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
-/**
- * Created by hardyshi on 16/11/23.
- */
+
 public class MyX509TrustManager implements X509TrustManager {
     X509TrustManager sunJSSEX509TrustManager;
 

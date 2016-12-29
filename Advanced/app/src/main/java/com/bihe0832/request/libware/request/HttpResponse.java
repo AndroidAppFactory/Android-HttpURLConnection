@@ -8,6 +8,13 @@ import com.bihe0832.request.libware.TextUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+/**
+ *
+ * 网络请求返回结果的基类，所有具体的网络请求返回都是他的实现，他与{@link HttpRequest}一般成对使用
+ *
+ */
+
 public abstract class HttpResponse {
     private  static final String LOG_TAG = "bihe0832 REQUEST";
 
@@ -38,9 +45,9 @@ public abstract class HttpResponse {
 		}
     }
     
-    public void  parseFailureResponse(int statusCode,String errorResponse) {
+    public void  parseFailureResponse(int flag,String errorResponse) {
 		this.ret = HTTPServer.RET_FAIL;
-		this.flag = processNetErrorCode(statusCode);
+		this.flag = flag;
         if(!TextUtils.ckIsEmpty(errorResponse)){
             this.msg = errorResponse;
         }
@@ -87,18 +94,4 @@ public abstract class HttpResponse {
         builder.append("&msg=" + msg);
         return builder.toString();
     }
-    
-	/**
-	 * @param statusCode
-	 *            当其值为0时说明是异常类错误；当其值为大于300时，说明是http错误；否则的话按默认系统错误处理 网络请求模块的错误处理
-	 */
-	private int processNetErrorCode(int statusCode) {
-		int code = HTTPServer.NetWorkException;
-		if (statusCode == 0) {
-			code = HTTPServer.NetWorkException;
-		} else if (statusCode > 300) {
-			code = HTTPServer.HttpSatutsError;
-		}
-		return code;
-	}
 }
