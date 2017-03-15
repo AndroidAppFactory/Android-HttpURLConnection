@@ -4,6 +4,11 @@
 
 一款封装HttpURLConnection实现的简单的网络请求的事例，提供了对应的apk和源码以及调用事例。暂时放上源码，后续提供代码介绍。
 
+## 运行方法
+
+如何修改配置及运行工程，请参考本人博客：[终端基于gradle的开源项目运行环境配置指引](
+http://blog.bihe0832.com/android-as-gradle-config.html)
+
 ## 文件结构
  
 	├── com.bihe0832.request.demo.advanced.apk ：网络请求结果解析为json后返回的demo
