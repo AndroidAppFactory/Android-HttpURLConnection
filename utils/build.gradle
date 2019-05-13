@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion = rootProject.ext.compileSdkVersion
+    buildToolsVersion = rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersionApiLevel
+        targetSdkVersion rootProject.ext.targetSdkVersionApiLevel
+        versionCode = rootProject.ext.versionCode
+        versionName = rootProject.ext.versionName
+        buildConfigField "boolean", "ENABLE_DEBUG", "false"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles './../proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled = false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = rootProject.ext.EVN_JAVA_1_7
+        targetCompatibility = rootProject.ext.EVN_JAVA_1_7
+    }
+}
+
+apply plugin: 'com.novoda.bintray-release'//添加
+
+//添加
+publish {
+    userOrg = 'bihe0832'//bintray.com用户名
+    groupId = 'com.bihe0832'//jcenter上的路径
+    artifactId = 'utils'//项目名称
+    publishVersion = '1.0.1'//版本号
+    desc = 'the base utils for zixie'//描述，不重要
+    website = 'https://github.com/bihe0832/Android-HttpURLConnection'//网站，最好有，不重要
+}

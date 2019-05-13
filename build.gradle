@@ -1,0 +1,50 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    ext {
+        minSdkVersionApiLevel = 14
+        targetSdkVersionApiLevel = 28
+
+        compileSdkVersion = 28
+        buildToolsVersion = "28.0.3"
+
+        versionCode = 1
+        versionName = "1.0.0"
+
+        kotlin_version = '1.2.71'
+        agp_version = '3.2.1'
+
+        EVN_JAVA_1_7 = JavaVersion.VERSION_1_7
+        EVN_JAVA_1_8 = JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        maven { url "http://maven.oa.com/nexus/content/repositories/androidbuild" }
+        maven { url "http://maven.oa.com/nexus/content/groups/androidbuild" }
+        maven { url "http://maven.oa.com/nexus/content/repositories/google-maven/" }
+        maven { url "https://dl.bintray.com/bihe0832/maven" }
+        
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$agp_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.novoda:bintray-release:0.9.1'
+    }
+}
+
+subprojects {
+    afterEvaluate { Project project ->
+        project.getTasks().getByName('clean').doFirst {
+            delete "build"
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "http://maven.oa.com/nexus/content/repositories/androidbuild" }
+        maven { url "http://maven.oa.com/nexus/content/groups/androidbuild" }
+        maven { url "http://maven.oa.com/nexus/content/repositories/google-maven/" }
+        maven { url "https://dl.bintray.com/bihe0832/maven" }
+    }
+}
