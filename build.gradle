@@ -22,8 +22,7 @@ buildscript {
         maven { url "http://maven.oa.com/nexus/content/repositories/androidbuild" }
         maven { url "http://maven.oa.com/nexus/content/groups/androidbuild" }
         maven { url "http://maven.oa.com/nexus/content/repositories/google-maven/" }
-        maven { url "https://dl.bintray.com/bihe0832/maven" }
-        
+        jcenter()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$agp_version"
@@ -45,6 +44,6 @@ allprojects {
         maven { url "http://maven.oa.com/nexus/content/repositories/androidbuild" }
         maven { url "http://maven.oa.com/nexus/content/groups/androidbuild" }
         maven { url "http://maven.oa.com/nexus/content/repositories/google-maven/" }
-        maven { url "https://dl.bintray.com/bihe0832/maven" }
+        jcenter()
     }
 }
