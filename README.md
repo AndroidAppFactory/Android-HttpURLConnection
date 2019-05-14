@@ -8,6 +8,22 @@
 
 ## 使用方法
 
+### 添加依赖
+
+在根目录添加发布插件的相关依赖
+
+    buildscript {  
+        repositories {  
+            jcenter()  
+        }  
+    }   
+
+    allprojects {  
+        repositories {  
+            jcenter()  
+        }  
+    }
+    
 ### import
 
 	dependencies {
