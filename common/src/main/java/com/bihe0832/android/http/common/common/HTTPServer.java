@@ -41,9 +41,7 @@ public class HTTPServer {
 
     public void init () {
 
-        mRequestHandlerThread = new HandlerThread("HTTPServer");
-        mRequestHandlerThread.start();
-        mCallHandler = new Handler(mRequestHandlerThread.getLooper()) {
+        mCallHandler = new Handler(ThreadManager.getInstance().getLooper(ThreadManager.LOOPER_TYPE_HIGHER)) {
             @Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
