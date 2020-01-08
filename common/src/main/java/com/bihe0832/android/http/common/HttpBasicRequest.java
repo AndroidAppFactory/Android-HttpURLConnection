@@ -1,4 +1,4 @@
-package com.bihe0832.android.http.common.common;
+package com.bihe0832.android.http.common;
 
 
 import java.util.HashMap;

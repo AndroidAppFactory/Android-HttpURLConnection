@@ -1,4 +1,4 @@
-package com.bihe0832.android.http.common.common;
+package com.bihe0832.android.http.common;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.util.HashMap;
