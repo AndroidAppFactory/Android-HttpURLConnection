@@ -35,7 +35,7 @@ android {
 
 dependencies {
     api 'com.bihe0832.android:lib-utils:1.0.0'
-    api 'com.bihe0832.android:lib-thread:1.0.1'
+    api 'com.bihe0832.android:lib-thread:1.0.+'
 }
 
 
@@ -44,7 +44,7 @@ apply plugin: 'com.novoda.bintray-release'//添加
 publish {
     artifactId = 'lib-http-common'//项目名称
     repoName = rootProject.repoName
-    publishVersion = '1.0.2'//版本号
+    publishVersion = '1.0.3'//版本号
     userOrg = rootProject.userOrg
     groupId = rootProject.groupId
     licences = rootProject.licences

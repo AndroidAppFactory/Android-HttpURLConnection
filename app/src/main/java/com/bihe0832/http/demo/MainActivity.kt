@@ -2,9 +2,9 @@ package com.bihe0832.http.demo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.bihe0832.android.http.common.common.HTTPServer
-import com.bihe0832.android.http.common.common.HttpBasicRequest
-import com.bihe0832.android.http.common.common.HttpResponseHandler
+import com.bihe0832.android.http.common.HTTPServer
+import com.bihe0832.android.http.common.HttpBasicRequest
+import com.bihe0832.android.http.common.HttpResponseHandler
 import com.bihe0832.http.advanced.HttpAdvancedRequest
 import com.bihe0832.http.demo.request.Constants
 import com.bihe0832.http.demo.request.advanced.AdvancedGetRequest

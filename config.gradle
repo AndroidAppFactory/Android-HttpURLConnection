@@ -31,7 +31,7 @@ ext {
     repoName = "android" //仓库名
     groupId = "com.bihe0832.android" //代码库路径
     artifactId = 'lib-utils'//项目名称
-    publishVersion = '1.0.2'//版本号
+    publishVersion = '1.0.3'//版本号
     desc = 'the base utils for zixie'//项目描述
     website = 'https://blog.bihe0832.com'//项目对应网站
     licences = ['Apache-2.0'] // 填写licences
