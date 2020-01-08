@@ -1,6 +1,6 @@
 # Android-HttpURLConnection
 
-[ ![Download](https://api.bintray.com/packages/bihe0832/maven/http-advanced/images/download.svg) ](https://bintray.com/bihe0832/maven/http-advanced/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/bihe0832/android/lib-http-advanced/images/download.svg) ](https://bintray.com/bihe0832/android/lib-http-advanced/_latestVersion)
 
 ## 简介
 
