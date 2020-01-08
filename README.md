@@ -27,13 +27,13 @@
 ### import
 
 	dependencies {
-	    api 'com.bihe0832:http-advanced:2.0.0'
+	    api 'com.bihe0832.android:lib-http-advanced:1.0.2'
 	}
 
 或
 
 	dependencies {
-	    api 'com.bihe0832:http-common:2.0.0'
+	    api 'com.bihe0832.android:lib-http-common:1.0.2'
 	}
 		
 
@@ -104,13 +104,11 @@ http://blog.bihe0832.com/android-as-gradle-config.html)
 
 	├── README.md
 	│
-	├── advanced：com.bihe0832:http-advanced 源码
+	├── advanced：com.bihe0832.android:lib-http-advanced 源码
 	│
 	├── app：Demo 源码
 	│
-	├── common：com.bihe0832:http-common 源码
-	│
-	└── utils：com.bihe0832:utils 源码
+	└── common：com.bihe0832.android:lib-http-common 源码
 
 ### 项目区别
 
