@@ -4,14 +4,14 @@ apply plugin: 'kotlin-android'
 
 android {
 
-    compileSdkVersion = rootProject.ext.compileSdkVersion
-    buildToolsVersion = rootProject.ext.buildToolsVersion
+    compileSdkVersion = project.compileSdkVersion
+    buildToolsVersion = project.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersionApiLevel
-        targetSdkVersion rootProject.ext.targetSdkVersionApiLevel
-        versionCode = rootProject.ext.versionCode
-        versionName = rootProject.ext.versionName
+        minSdkVersion project.commonMinSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode = project.versionCode
+        versionName = project.versionName
         buildConfigField "boolean", "ENABLE_DEBUG", "false"
     }
 
@@ -30,14 +30,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = rootProject.ext.EVN_JAVA_1_7
-        targetCompatibility = rootProject.ext.EVN_JAVA_1_7
+        sourceCompatibility = project.EVN_JAVA_1_7
+        targetCompatibility = project.EVN_JAVA_1_7
     }
 }
 
 dependencies {
     implementation 'com.android.support:appcompat-v7:24.2.0'
 //    implementation project(":advanced")
-    api 'com.bihe0832:http-advanced:2.0.0'
+    api "com.bihe0832.android:lib-http-advanced:1.0.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -1,8 +1,8 @@
 package com.bihe0832.http.demo.request.basic;
 
 
-import com.bihe0832.http.common.HttpRequest;
-import com.bihe0832.http.common.HttpResponseHandler;
+import com.bihe0832.android.http.common.common.HttpRequest;
+import com.bihe0832.android.http.common.common.HttpResponseHandler;
 import com.bihe0832.http.demo.request.Constants;
 
 public class BasicGetRequest extends HttpRequest {

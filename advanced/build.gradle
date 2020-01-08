@@ -2,17 +2,21 @@ apply plugin: 'com.android.library'
 
 android {
 
-    compileSdkVersion = rootProject.ext.compileSdkVersion
-    buildToolsVersion = rootProject.ext.buildToolsVersion
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersionApiLevel
-        targetSdkVersion rootProject.ext.targetSdkVersionApiLevel
-        versionCode = rootProject.ext.versionCode
-        versionName = rootProject.ext.versionName
-        buildConfigField "boolean", "ENABLE_DEBUG", "false"
+        minSdkVersion project.commonMinSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode project.mnaLib.versionCode
+        versionName project.mnaLib.versionName
     }
 
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
     lintOptions {
         abortOnError false
     }
@@ -28,23 +32,25 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = rootProject.ext.EVN_JAVA_1_7
-        targetCompatibility = rootProject.ext.EVN_JAVA_1_7
+        sourceCompatibility = project.EVN_JAVA_1_7
+        targetCompatibility = project.EVN_JAVA_1_7
     }
 }
 
 dependencies {
 //    api project(":common")
-    api 'com.bihe0832:http-common:2.0.0'
+    api "com.bihe0832.android:lib-http-common:1.0.1"
+    api "com.bihe0832.android:lib-gson:1.0.1"
 }
-
 apply plugin: 'com.novoda.bintray-release'//添加
 //添加
 publish {
-    userOrg = 'bihe0832'
-    groupId = 'com.bihe0832'
-    artifactId = 'http-advanced'
-    publishVersion = '2.0.0'
+    artifactId = 'lib-http-advanced'//项目名称
+    repoName = rootProject.repoName
+    publishVersion = '1.0.2'//版本号
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    licences = rootProject.licences
     desc = 'a http request library based on HttpURLConnection'
     website = 'https://github.com/bihe0832/Android-HttpURLConnection'
 }

@@ -1,38 +1,30 @@
 package com.bihe0832.http.demo.request.advanced;
 
 
-import android.util.Log;
+import com.google.gson.annotations.SerializedName;
+
+import static com.bihe0832.http.advanced.HttpAdvancedRequest.RET_FAIL;
 
 
-import com.bihe0832.http.advanced.HttpResponse;
-import com.bihe0832.http.demo.request.Constants;
+public class TestResponse {
 
-import org.json.JSONException;
-import org.json.JSONObject;
+    @SerializedName("ret")
+    public int ret = RET_FAIL;
 
+    @SerializedName("flag")
+    public int flag = RET_FAIL;
 
-public class TestResponse extends HttpResponse {
+    @SerializedName("msg")
+    public String msg  = "";
 
-    private  static final String LOG_TAG = "bihe0832 REQUEST";
+    @SerializedName("para")
     public String para = "";
 
-
-
     @Override
-    public void parseJson(JSONObject json) {
-        super.parseBaseJson(json);
-        if (HttpResponse.RET_SUCC == ret) {
-            parseGuestUserCheckSuccRespones(json);
-        } else {
-            Log.w(LOG_TAG, json.toString());
-        }
-    }
-
-    private void parseGuestUserCheckSuccRespones(JSONObject json) {
-        try {
-            para = json.getString(Constants.PARA_PARA);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+    public String toString() {
+        return "ret：\n\t" + ret + " \n " +
+                "flag：\n\t" + flag + " \n " +
+                "msg：\n\t" + msg + " \n " +
+                "para：\n\t" + para + " \n ";
     }
 }

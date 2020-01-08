@@ -1,8 +1,10 @@
-package com.bihe0832.http.common;
+package com.bihe0832.android.http.common.common;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -59,13 +61,13 @@ public abstract class BaseConnection {
             return;
         }
         String cookieString = connection.getRequestProperty(HTTP_REQ_COOKIE);
-        if(!TextUtils.ckIsEmpty(cookieString)){
+        if(!TextUtils.isEmpty(cookieString)){
             cookieString = cookieString + ";";
         }else{
             cookieString = "";
         }
         for (Map.Entry<String, String> entry : cookieInfo.entrySet()) {
-            if(TextUtils.ckIsEmpty(entry.getKey()) || TextUtils.ckIsEmpty(entry.getValue())){
+            if(TextUtils.isEmpty(entry.getKey()) || TextUtils.isEmpty(entry.getValue())){
                 Log.d(LOG_TAG,"cookie inf is bad");
             }else{
                 cookieString = cookieString + entry.getKey() + HttpBasicRequest.HTTP_REQ_ENTITY_MERGE + entry.getValue() + ";";
@@ -103,13 +105,14 @@ public abstract class BaseConnection {
             }
             connection.setRequestMethod(HTTP_REQ_METHOD_GET);
             is = connection.getInputStream();
-            br = new BufferedReader(new InputStreamReader(is, HTTP_REQ_VALUE_CHARSET));
-            String line = null;
-            StringBuffer sb = new StringBuffer();
-            while ((line = br.readLine()) != null) {
-                sb.append(line);
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            byte[] buffer = new byte[8192];
+            int len;
+            while((len = is.read(buffer)) != -1) {
+                os.write(buffer, 0, len);
             }
-            result = sb.toString();
+            is.close();
+            result = os.toString(HTTP_REQ_VALUE_CHARSET);
         }catch (javax.net.ssl.SSLHandshakeException ee){
             Log.e(LOG_TAG, "javax.net.ssl.SSLPeerUnverifiedException");
         }catch (Exception e) {
@@ -130,6 +133,7 @@ public abstract class BaseConnection {
             return result;
         }
     }
+
     protected String doPostRequest(byte[] data){
         BufferedReader br = null;
         InputStream inptStream = null;
@@ -148,13 +152,14 @@ public abstract class BaseConnection {
             int response = connection.getResponseCode();            //获得服务器的响应码
             if(response == HttpURLConnection.HTTP_OK) {
                 inptStream = connection.getInputStream();
-                br = new BufferedReader(new InputStreamReader(inptStream, HTTP_REQ_VALUE_CHARSET));
-                String line = null;
-                StringBuffer sb = new StringBuffer();
-                while ((line = br.readLine()) != null) {
-                    sb.append(line);
+                ByteArrayOutputStream os = new ByteArrayOutputStream();
+                byte[] buffer = new byte[8192];
+                int len;
+                while((len = inptStream.read(buffer)) != -1) {
+                    os.write(buffer, 0, len);
                 }
-                return sb.toString();
+                inptStream.close();
+                return os.toString(HTTP_REQ_VALUE_CHARSET);
             }
         } catch (Exception e) {
             e.printStackTrace();

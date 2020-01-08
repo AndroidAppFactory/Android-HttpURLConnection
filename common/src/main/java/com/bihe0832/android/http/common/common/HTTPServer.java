@@ -1,11 +1,12 @@
-package com.bihe0832.http.common;
+package com.bihe0832.android.http.common.common;
 
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 
-import com.bihe0832.utils.ThreadManager;
+import com.bihe0832.android.lib.thread.ThreadManager;
 
 import java.net.HttpURLConnection;
 
@@ -107,12 +108,12 @@ public class HTTPServer {
         if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
             request.getResponseHandler().onResponse(connection.getResponseCode(), result);
         }else{
-            if (TextUtils.ckIsEmpty(result)) {
+            if (TextUtils.isEmpty(result)) {
                 if(DEBUG) {
                     Log.e(LOG_TAG, request.getClass().getName());
                 }
                 Log.e(LOG_TAG,"responseBody is null");
-                if(TextUtils.ckIsEmpty(connection.getResponseMessage())){
+                if(TextUtils.isEmpty(connection.getResponseMessage())){
                     request.getResponseHandler().onResponse(connection.getResponseCode(), "");
                 }else{
                     request.getResponseHandler().onResponse(connection.getResponseCode(),connection.getResponseMessage());
