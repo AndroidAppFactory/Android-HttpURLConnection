@@ -39,14 +39,14 @@ android {
 
 dependencies {
 //    api project(":common")
-    api "com.bihe0832.android:lib-http-common:1.2.0"
+    api "com.bihe0832.android:lib-http-common:1.2.1"
 }
 apply plugin: 'com.novoda.bintray-release'//添加
 //添加
 publish {
     artifactId = 'lib-http-advanced'//项目名称
     repoName = rootProject.repoName
-    publishVersion = '1.2.0'//版本号
+    publishVersion = '1.2.1'//版本号
     userOrg = rootProject.userOrg
     groupId = rootProject.groupId
     licences = rootProject.licences

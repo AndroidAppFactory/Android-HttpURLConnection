@@ -38,6 +38,6 @@ android {
 dependencies {
     implementation 'com.android.support:appcompat-v7:24.2.0'
 //    implementation project(":advanced")
-    api "com.bihe0832.android:lib-http-advanced:1.2.0"
+    api "com.bihe0832.android:lib-http-advanced:1.2.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
