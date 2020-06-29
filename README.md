@@ -2,9 +2,15 @@
 
 [ ![Download](https://api.bintray.com/packages/bihe0832/android/lib-http-advanced/images/download.svg) ](https://bintray.com/bihe0832/android/lib-http-advanced/_latestVersion)
 
+## 说明
+
+### **lib-http 后续不再单独在此维护，统一合并到AndroidAppFactory 中继续维护，对应Git地址为：**
+
+**AndroidAppFactory：[https://github.com/bihe0832/AndroidAppFactory](https://github.com/bihe0832/AndroidAppFactory)**
+
 ## 简介
 
-一款封装HttpURLConnection实现的简单的网络请求的事例，提供了对应的apk和源码以及调用事例。暂时放上源码，后续提供代码介绍。
+一款封装HttpURLConnection实现的简单的网络请求的事例，提供了对应的apk和源码以及调用事例。
 
 ## 使用方法
 
@@ -27,13 +33,13 @@
 ### import
 
 	dependencies {
-	    api 'com.bihe0832.android:lib-http-advanced:1.0.2'
+	    api 'com.bihe0832.android:lib-http-advanced:1.3.0'
 	}
 
 或
 
 	dependencies {
-	    api 'com.bihe0832.android:lib-http-common:1.0.2'
+	    api 'com.bihe0832.android:lib-wrapper:1.0.3'
 	}
 		
 
@@ -99,16 +105,6 @@
 
 如何修改配置及运行工程，请参考本人博客：[终端基于gradle的开源项目运行环境配置指引](
 http://blog.bihe0832.com/android-as-gradle-config.html)
-
-### 文件结构
-
-	├── README.md
-	│
-	├── advanced：com.bihe0832.android:lib-http-advanced 源码
-	│
-	├── app：Demo 源码
-	│
-	└── common：com.bihe0832.android:lib-http-common 源码
 
 ### 项目区别
 
