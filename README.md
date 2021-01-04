@@ -8,6 +8,10 @@
 
 **AndroidAppFactory：[https://github.com/bihe0832/AndroidAppFactory](https://github.com/bihe0832/AndroidAppFactory)**
 
+**对应组件库为：LibHttpCommon & LibHttpAdvanced**
+
+**调用事例参考：https://github.com/bihe0832/AndroidAppFactory/tree/master/APPTest/src/main/java/com/bihe0832/android/test/module/request**
+
 ## 简介
 
 一款封装HttpURLConnection实现的简单的网络请求的事例，提供了对应的apk和源码以及调用事例。
