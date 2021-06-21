@@ -10,7 +10,7 @@
 
 **对应组件库为：LibHttpCommon & LibHttpAdvanced**
 
-**调用事例参考：https://github.com/bihe0832/AndroidAppFactory/tree/master/APPTest/src/main/java/com/bihe0832/android/test/module/request**
+**调用事例参考：https://github.com/bihe0832/AndroidAppFactory/tree/master/BaseTest/src/main/java/com/bihe0832/android/base/test/request**
 
 ## 简介
 
